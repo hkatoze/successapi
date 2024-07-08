@@ -31,7 +31,7 @@ module.exports = (Sequelize, DataTypes) => {
           },
         },
       },
-      decription: {
+      description: {
         type: DataTypes.TEXT,
         allowNull: false,
         validate: {
