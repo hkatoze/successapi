@@ -7,6 +7,7 @@ module.exports = (app) => {
   app.post("/api/signup", auth, (req, res) => {
     User.create({
       nom_et_prenom: req.body.nom_et_prenom,
+      genre:req.body.genre,
       phone: req.body.phone,
       type_bac: req.body.type_bac,
       annee_bac: req.body.annee_bac,
