@@ -35,6 +35,25 @@ module.exports = (Sequelize, DataTypes) => {
         allowNull: true,
       },
 
+      dominantForceTemperament: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      dominantWeaknessTemperament: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+
+      temperament: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      
+      skills: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
      
     },
     { timestamp: true }
