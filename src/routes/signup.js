@@ -12,7 +12,7 @@ module.exports = (app) => {
       annee_bac: req.body.annee_bac,
       pays_origine: req.body.pays_origine,
       ville_origine: req.body.ville_origine,
-      date_inscription: req.body.date_inscription,
+    
     })
       .then((user) => {
         const message = `Création de compte effectuée avec succès`;

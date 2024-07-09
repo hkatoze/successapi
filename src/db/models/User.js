@@ -35,10 +35,7 @@ module.exports = (Sequelize, DataTypes) => {
         allowNull: true,
       },
 
-      date_inscription: {
-        type: DataTypes.DATE,
-        allowNull: true,
-      },
+     
     },
     { timestamp: true }
   );
