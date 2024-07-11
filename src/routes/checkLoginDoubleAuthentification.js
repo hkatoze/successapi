@@ -18,14 +18,14 @@ module.exports = (app) => {
       }
 
       // Vérification du code de vérification
-      if (user.resetPasswordCode !== verificationCode) {
+      if (user.authentificationCode !== verificationCode) {
         return res
           .status(400)
           .json({ message: "Code de vérification incorrect." });
       }
 
       // Modification du mot de passe
-      user.resetPasswordCode = null; // Réinitialisation du code de vérification après utilisation
+      user.authentificationCode = null; // Réinitialisation du code de vérification après utilisation
       await user.save();
 
       return res

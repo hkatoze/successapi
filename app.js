@@ -48,6 +48,7 @@ require("./src/routes/updateTemperament")(app);
 require("./src/routes/deleteTemperament")(app);
 require("./src/routes/getAllTemperaments")(app);
 require("./src/routes/createTemperament")(app);
+require("./src/routes/checkLoginDoubleAuthentification")(app);
 
 //404 error managment
 app.use(({ res }) => {
