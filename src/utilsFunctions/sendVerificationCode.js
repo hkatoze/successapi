@@ -6,7 +6,7 @@ async function sendVerificationCode(phone_number, verificationCode) {
   try {
     const url = "https://www.aqilas.com/api/v1/sms";
     const headers = {
-      "X-AUTH-TOKEN": 'a8746232-e083-4826-8c0e-a81b00ac8b2b',
+      "X-AUTH-TOKEN": '81fb066a-9e2d-4ed6-95dd-aa23c476d3e5',
       "Content-Type": "application/json",
     };
 
