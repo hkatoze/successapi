@@ -26,11 +26,11 @@ module.exports = (app) => {
       const verificationCode = generateVerificationCode();
 
       // Stockage du code de vérification dans la base de données
-      user.resetPasswordCode = verificationCode;
+      user.authentificationCode = verificationCode;
       await user.save();
 
       // Envoi du code de vérification par e-mail
-      await sendVerificationCode(emailAddress, verificationCode);
+      await sendVerificationCode(phone, verificationCode);
 
       return res.status(200).json({
         message: "Un code de vérification a été envoyé sur votre numéro de téléphone.",
@@ -39,7 +39,7 @@ module.exports = (app) => {
     } catch (error) {
       return res.status(500).json({
         message:
-          "Une erreur est survenue lors de la réinitialisation du mot de passe.",
+          "Une erreur est survenue lors de la connexion.",
         error,
       });
     }

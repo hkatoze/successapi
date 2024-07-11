@@ -54,6 +54,10 @@ module.exports = (Sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
+      authentificationCode: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
      
     },
     { timestamp: true }
