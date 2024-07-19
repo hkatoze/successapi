@@ -1,7 +1,5 @@
 const axios = require("axios");
-const dotenv = require("dotenv");
 
-dotenv.config();
 async function sendVerificationCode(phone_number, verificationCode) {
   try {
     const url = "https://www.aqilas.com/api/v1/sms";

@@ -22,6 +22,8 @@ module.exports = (app) => {
         });
       }
 
+
+   
       // Génération d'un code de vérification unique
       const verificationCode = generateVerificationCode();
 
