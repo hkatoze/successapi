@@ -10,23 +10,15 @@ module.exports = (app) => {
       .then((user) => {
         if (user === null) {
           const message = `L'utilisateur demandé n'existe pas. Réessayer avec un autre identifiant.`;
-
           return res.status(404).json({ message });
         }
 
-        User.update(req.body, { where: { id: id } }).then((_) => {
-
-          const user = await User.findOne({ where: { id } });
-      if (!user) {
-        return res
-          .status(404)
-          .json({
-            message: "Cet utilisateur n'existe pas. Réessayer avec un autre identifiant.",
+        User.update(req.body, { where: { id: id } })
+          .then(() => {
+            Object.assign(user, req.body);
+            const message = `L'utilisateur a bien été modifié.`;
+            res.json({ message, data: user });
           });
-      }
-      const message = `L'utilisateur a bien été modifié.`;
-      res.json({ message, data: user });
-        });
       })
       .catch((error) => {
         if (error instanceof ValidationError) {
