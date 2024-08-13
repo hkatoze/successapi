@@ -477,12 +477,12 @@ const filieres = [
 const initDb = () => {
   return sequelize.sync().then((_) => {
     console.log(`La base de données a bien été initialisée !`);
-    Temperament.bulkCreate(temperaments).then((_) =>
+  /*   Temperament.bulkCreate(temperaments).then((_) =>
       console.log(`Temperaments ajoutés avec succès`)
     );
     Filiere.bulkCreate(filieres).then((_) =>
       console.log(`Filières ajoutées avec succès`)
-    );
+    ); */
   });
 };
 
