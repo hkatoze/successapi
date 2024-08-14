@@ -1,4 +1,4 @@
-const { User } = require("../db/sequelize");
+const { User,TestResultat } = require("../db/sequelize");
 const { ValidationError } = require("sequelize");
 const auth = require("../auth/auth");
 
@@ -12,11 +12,13 @@ module.exports = (app) => {
           const message = `L'utilisateur demandé n'existe pas. Réessayer avec un autre identifiant.`;
           return res.status(404).json({ message });
         }
-
+        
         User.update(req.body, { where: { id: id } })
           .then(() => {
             Object.assign(user, req.body);
             const message = `L'utilisateur a bien été modifié.`;
+
+            TestResultat.create({userId:req.params.userId,  testId: 1, testResult: req.body.temperament });
             res.json({ message, data: user });
           });
       })
