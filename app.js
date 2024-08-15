@@ -19,6 +19,7 @@ require("./src/routes/loginToApi")(app);
 
 
 require("./src/routes/getUserByPk")(app);
+require("./src/routes/getAdminByPk")(app);
 require("./src/routes/updateUser")(app);
 require("./src/routes/deleteUser")(app);
 require("./src/routes/getAllUsers")(app);
