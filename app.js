@@ -22,6 +22,7 @@ require("./src/routes/getUserByPk")(app);
 require("./src/routes/updateUser")(app);
 require("./src/routes/deleteUser")(app);
 require("./src/routes/getAllUsers")(app);
+require("./src/routes/getAllAdmins")(app);
 require("./src/routes/signup")(app);
 require("./src/routes/login")(app);
 
