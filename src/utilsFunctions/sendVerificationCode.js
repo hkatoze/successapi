@@ -4,7 +4,7 @@ async function sendVerificationCode(phone_number, verificationCode) {
   try {
     const url = "https://www.aqilas.com/api/v1/sms";
     const headers = {
-      "X-AUTH-TOKEN": '81fb066a-9e2d-4ed6-95dd-aa23c476d3e5',
+      "X-AUTH-TOKEN": "81fb066a-9e2d-4ed6-95dd-aa23c476d3e5",
       "Content-Type": "application/json",
     };
 
@@ -15,7 +15,7 @@ async function sendVerificationCode(phone_number, verificationCode) {
     };
 
     const response = await axios.post(url, data, { headers });
-
+    console.error("Message envoyé:", response.statusText);
     return response.data;
   } catch (error) {
     console.error("Impossible d'envoyer le message:", error);

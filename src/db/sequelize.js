@@ -160,7 +160,6 @@ const temperaments = [
   },
 ];
 const filieres = [
-
   {
     nom: "Genie Civil",
     description:
@@ -314,7 +313,7 @@ const filieres = [
     ].join(", "),
     departement: "ST",
   },
- 
+
   {
     nom: "Logistique-Transport-Transit",
     description:
@@ -477,7 +476,7 @@ const filieres = [
 const initDb = () => {
   return sequelize.sync().then((_) => {
     console.log(`La base de données a bien été initialisée !`);
-  /*   Temperament.bulkCreate(temperaments).then((_) =>
+    /*   Temperament.bulkCreate(temperaments).then((_) =>
       console.log(`Temperaments ajoutés avec succès`)
     );
     Filiere.bulkCreate(filieres).then((_) =>
