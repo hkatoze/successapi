@@ -10,13 +10,16 @@ app
   .use(bodyParser.json())
   .use(cors())
   .use(favicon(__dirname + "/favicon.ico"));
+app.use((req, res, next) => {
+  console.log(`Requête reçue: ${req.method} ${req.url}`);
+  next();
+});
 initDb();
 
 /* ........All routes list........... */
 require("./src/routes/home")(app);
 require("./src/routes/signupToApi")(app);
 require("./src/routes/loginToApi")(app);
-
 
 require("./src/routes/getUserByPk")(app);
 require("./src/routes/getAdminByPk")(app);
