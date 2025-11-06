@@ -18,6 +18,13 @@ module.exports = (Sequelize, DataTypes) => {
       phone: {
         type: DataTypes.STRING,
         allowNull: true,
+        unique: true,
+        validate: {
+          is: {
+            args: [/^\+?[0-9]{8,15}$/], // format basique +226XXXXXX
+            msg: "Numéro de téléphone invalide",
+          },
+        },
       },
 
       type_bac: {
@@ -49,7 +56,7 @@ module.exports = (Sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      
+
       skills: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -58,7 +65,6 @@ module.exports = (Sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
-     
     },
     { timestamp: true }
   );

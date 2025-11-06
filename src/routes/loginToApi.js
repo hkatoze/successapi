@@ -20,7 +20,7 @@ module.exports = (app) => {
             }
             //JWT
             const token = jwt.sign({ userId: admin.id }, privateKey, {
-              expiresIn: "365d",
+              expiresIn: "3650d",
             });
 
             Admin.update({ fcmToken: token }, { where: { id: admin.id } }).then(
